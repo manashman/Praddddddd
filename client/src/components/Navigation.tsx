@@ -79,10 +79,10 @@ export function Navigation() {
               ))}
               <Button 
                 className="ml-4 font-display text-xs tracking-wider"
-                onClick={() => handleNavClick("/contact")}
-                data-testid="nav-register-button"
+                onClick={() => window.open("/attached_assets/PRADHARSHINI'24 RULEBOOK_1764269238394.pdf", "_blank")}
+                data-testid="nav-rulebook-button"
               >
-                REGISTER NOW
+                RULE BOOK
               </Button>
             </div>
 
@@ -129,10 +129,10 @@ export function Navigation() {
               >
                 <Button 
                   className="mt-4 font-display tracking-wider"
-                  onClick={() => handleNavClick("/contact")}
-                  data-testid="mobile-register-button"
+                  onClick={() => window.open("/attached_assets/PRADHARSHINI'24 RULEBOOK_1764269238394.pdf", "_blank")}
+                  data-testid="mobile-rulebook-button"
                 >
-                  REGISTER NOW
+                  RULE BOOK
                 </Button>
               </motion.div>
             </div>
