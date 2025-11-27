@@ -72,7 +72,7 @@ export function HeroSection() {
         >
           <Star className="w-4 h-4 text-primary animate-pulse" />
           <span className="text-sm md:text-base font-medium text-muted-foreground tracking-widest uppercase">
-            A Journey Through Time
+            Where Glory Beckons
           </span>
           <Star className="w-4 h-4 text-primary animate-pulse" />
         </motion.div>
