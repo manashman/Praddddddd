@@ -3,6 +3,7 @@ import { Navigation } from "@/components/Navigation";
 import { HeroSection } from "@/components/HeroSection";
 import { AboutSection } from "@/components/AboutSection";
 import { EventsSection } from "@/components/EventsSection";
+import { VideosSection } from "@/components/VideosSection";
 import { WhyAttendSection } from "@/components/WhyAttendSection";
 import { Footer } from "@/components/Footer";
 
@@ -19,6 +20,7 @@ export default function Home() {
       <main className="relative z-10">
         <HeroSection />
         <AboutSection />
+        <VideosSection />
         <EventsSection />
         <WhyAttendSection />
       </main>
