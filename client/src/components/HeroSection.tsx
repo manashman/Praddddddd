@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
 import { ChevronDown, Rocket, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLocation } from "wouter";
 import { CountdownTimer } from "./CountdownTimer";
 import pradharshiniImage from "@assets/prad 2026 title new_1764267906090.png";
 
 export function HeroSection() {
-  const scrollToEvents = () => {
-    const element = document.querySelector("#events");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  const [, navigate] = useLocation();
+
+  const goToEvents = () => {
+    navigate("/events");
   };
 
   const scrollToContact = () => {
@@ -126,7 +126,7 @@ export function HeroSection() {
           <Button 
             size="lg" 
             className="font-display text-sm tracking-wider px-8"
-            onClick={scrollToEvents}
+            onClick={goToEvents}
             data-testid="hero-explore-button"
           >
             EXPLORE EVENTS
