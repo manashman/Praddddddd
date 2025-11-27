@@ -1,19 +1,21 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLocation } from "wouter";
 import { Menu, X, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { name: "Home", href: "#home" },
+  { name: "Home", href: "/" },
   { name: "About", href: "#about" },
   { name: "Events", href: "#events" },
-  { name: "Schedule", href: "#schedule" },
-  { name: "Contact", href: "#contact" },
+  { name: "Schedule", href: "/schedule" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [location, setLocation] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,10 +25,16 @@ export function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+  const handleNavClick = (href: string) => {
+    if (href.startsWith("/")) {
+      // Page navigation
+      setLocation(href);
+    } else {
+      // Scroll to section on same page
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
     setIsMobileMenuOpen(false);
   };
@@ -62,7 +70,7 @@ export function Navigation() {
               {navLinks.map((link) => (
                 <button
                   key={link.name}
-                  onClick={() => scrollToSection(link.href)}
+                  onClick={() => handleNavClick(link.href)}
                   className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground transition-colors rounded-md hover-elevate"
                   data-testid={`nav-link-${link.name.toLowerCase()}`}
                 >
@@ -71,7 +79,7 @@ export function Navigation() {
               ))}
               <Button 
                 className="ml-4 font-display text-xs tracking-wider"
-                onClick={() => scrollToSection("#contact")}
+                onClick={() => handleNavClick("/contact")}
                 data-testid="nav-register-button"
               >
                 REGISTER NOW
@@ -107,7 +115,7 @@ export function Navigation() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  onClick={() => scrollToSection(link.href)}
+                  onClick={() => handleNavClick(link.href)}
                   className="text-xl font-medium text-foreground/80 hover:text-foreground transition-colors py-3"
                   data-testid={`mobile-nav-link-${link.name.toLowerCase()}`}
                 >
@@ -121,7 +129,7 @@ export function Navigation() {
               >
                 <Button 
                   className="mt-4 font-display tracking-wider"
-                  onClick={() => scrollToSection("#contact")}
+                  onClick={() => handleNavClick("/contact")}
                   data-testid="mobile-register-button"
                 >
                   REGISTER NOW

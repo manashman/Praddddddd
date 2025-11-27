@@ -1,12 +1,9 @@
 import { StarBackground } from "@/components/StarBackground";
 import { Navigation } from "@/components/Navigation";
-import { HeroSection } from "@/components/HeroSection";
-import { AboutSection } from "@/components/AboutSection";
-import { EventsSection } from "@/components/EventsSection";
-import { WhyAttendSection } from "@/components/WhyAttendSection";
+import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 
-export default function Home() {
+export default function Contact() {
   return (
     <div className="relative min-h-screen">
       {/* Animated star background */}
@@ -16,11 +13,8 @@ export default function Home() {
       <Navigation />
       
       {/* Main content */}
-      <main className="relative z-10">
-        <HeroSection />
-        <AboutSection />
-        <EventsSection />
-        <WhyAttendSection />
+      <main className="relative z-10 pt-24">
+        <ContactSection />
       </main>
       
       {/* Footer */}
