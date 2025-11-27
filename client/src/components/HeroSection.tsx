@@ -112,7 +112,7 @@ export function HeroSection() {
         >
           <span className="inline-flex items-center gap-2 px-6 py-2 rounded-full glass border border-primary/20 text-sm md:text-base font-medium">
             <Rocket className="w-4 h-4 text-primary" />
-            <span className="text-foreground">January 30, 2026</span>
+            <span className="text-foreground">January 30, 31 & February 1, 2026</span>
           </span>
         </motion.div>
 
