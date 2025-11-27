@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
-import { ChevronDown, Rocket, Star } from "lucide-react";
+import { ChevronDown, Clock, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
 import { useState } from "react";
@@ -220,9 +220,9 @@ export function HeroSection() {
           >
             <motion.div
               animate={{ rotate: 360 }}
-              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
             >
-              <Rocket className="w-4 h-4 text-primary" />
+              <Clock className="w-4 h-4 text-primary" />
             </motion.div>
             <span className="text-foreground">January 30, 31 & February 1, 2026</span>
           </motion.span>
