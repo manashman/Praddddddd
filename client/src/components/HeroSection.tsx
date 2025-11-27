@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ChevronDown, Rocket, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CountdownTimer } from "./CountdownTimer";
+import pradharshiniImage from "@assets/prad 2026 title new_1764267906090.png";
 
 export function HeroSection() {
   const scrollToEvents = () => {
@@ -76,23 +77,18 @@ export function HeroSection() {
           <Star className="w-4 h-4 text-primary animate-pulse" />
         </motion.div>
 
-        {/* Main Title */}
-        <motion.h1
+        {/* Main Title - Logo Image */}
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4"
+          className="flex justify-center mb-6"
         >
-          <span className="text-glow gradient-cosmic-text">PRADHARSHINI</span>
-        </motion.h1>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground/90 mb-6"
-        >
-          <span className="text-primary">25</span>
+          <img 
+            src={pradharshiniImage} 
+            alt="Pradharshini 2026" 
+            className="h-32 md:h-40 lg:h-48 object-contain filter invert"
+          />
         </motion.div>
 
         {/* Tagline */}
@@ -116,7 +112,7 @@ export function HeroSection() {
         >
           <span className="inline-flex items-center gap-2 px-6 py-2 rounded-full glass border border-primary/20 text-sm md:text-base font-medium">
             <Rocket className="w-4 h-4 text-primary" />
-            <span className="text-foreground">March 15-17, 2025</span>
+            <span className="text-foreground">January 30, 2026</span>
           </span>
         </motion.div>
 
@@ -152,7 +148,7 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
         >
-          <CountdownTimer targetDate="2025-03-15T09:00:00" />
+          <CountdownTimer targetDate="2026-01-30T09:00:00" />
         </motion.div>
       </div>
 
