@@ -80,11 +80,12 @@ export default {
           busy: "rgb(239 68 68)",
           offline: "rgb(156 163 175)",
         },
-        cosmic: {
-          purple: "hsl(270 80% 60%)",
-          blue: "hsl(220 90% 55%)",
-          pink: "hsl(280 60% 50%)",
-          cyan: "hsl(190 85% 50%)",
+        temporal: {
+          bronze: "hsl(40 80% 55%)",
+          copper: "hsl(35 70% 60%)",
+          indigo: "hsl(260 40% 50%)",
+          cream: "hsl(45 35% 88%)",
+          slate: "hsl(30 20% 8%)",
         },
       },
       fontFamily: {

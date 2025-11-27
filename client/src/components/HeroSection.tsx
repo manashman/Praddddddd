@@ -72,7 +72,7 @@ export function HeroSection() {
         >
           <Star className="w-4 h-4 text-primary animate-pulse" />
           <span className="text-sm md:text-base font-medium text-muted-foreground tracking-widest uppercase">
-            Where Stars Align
+            A Journey Through Time
           </span>
           <Star className="w-4 h-4 text-primary animate-pulse" />
         </motion.div>
@@ -98,9 +98,9 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed"
         >
-          Embark on a cosmic journey of culture, creativity, and celebration.
+          Step into a temporal journey of culture, creativity, and timeless celebration.
           <br className="hidden md:block" />
-          The universe awaits your talent.
+          History awaits your legacy.
         </motion.p>
 
         {/* Event Date */}

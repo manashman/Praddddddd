@@ -22,13 +22,13 @@ export function StarBackground() {
 
   useEffect(() => {
     const generatedStars: Star[] = [];
-    for (let i = 0; i < 150; i++) {
+    for (let i = 0; i < 100; i++) {
       generatedStars.push({
         id: i,
         x: Math.random() * 100,
         y: Math.random() * 100,
-        size: Math.random() * 2 + 1,
-        opacity: Math.random() * 0.8 + 0.2,
+        size: Math.random() * 2 + 0.5,
+        opacity: Math.random() * 0.6 + 0.1,
         animationDelay: Math.random() * 5,
       });
     }
@@ -46,58 +46,59 @@ export function StarBackground() {
       
       setTimeout(() => {
         setShootingStars(prev => prev.filter(s => s.id !== newShootingStar.id));
-      }, 1500);
-    }, 4000);
+      }, 2000);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-      {/* Deep space gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[hsl(250,20%,5%)] via-[hsl(260,25%,8%)] to-[hsl(240,15%,3%)]" />
+      {/* Temporal gradient - warm vintage tones */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[hsl(30,30%,6%)] via-[hsl(35,40%,10%)] to-[hsl(30,20%,8%)]" />
       
-      {/* Nebula effects */}
+      {/* Temporal rifts - indigo and bronze glows */}
       <div 
-        className="absolute top-0 left-1/4 w-[800px] h-[800px] rounded-full opacity-20"
+        className="absolute top-20 left-1/3 w-[700px] h-[700px] rounded-full opacity-15"
         style={{
-          background: "radial-gradient(circle, hsl(270 80% 50% / 0.3) 0%, transparent 70%)",
-          filter: "blur(80px)",
+          background: "radial-gradient(circle, hsl(260 40% 50% / 0.25) 0%, transparent 70%)",
+          filter: "blur(120px)",
         }}
       />
       <div 
-        className="absolute bottom-1/4 right-0 w-[600px] h-[600px] rounded-full opacity-15"
+        className="absolute bottom-1/3 right-1/4 w-[600px] h-[600px] rounded-full opacity-12"
         style={{
-          background: "radial-gradient(circle, hsl(220 90% 50% / 0.4) 0%, transparent 70%)",
+          background: "radial-gradient(circle, hsl(40 80% 50% / 0.15) 0%, transparent 70%)",
           filter: "blur(100px)",
         }}
       />
       <div 
-        className="absolute top-1/2 left-0 w-[500px] h-[500px] rounded-full opacity-10"
+        className="absolute top-1/2 left-1/4 w-[500px] h-[500px] rounded-full opacity-10"
         style={{
-          background: "radial-gradient(circle, hsl(280 60% 50% / 0.3) 0%, transparent 70%)",
-          filter: "blur(60px)",
+          background: "radial-gradient(circle, hsl(35 70% 55% / 0.12) 0%, transparent 70%)",
+          filter: "blur(90px)",
         }}
       />
 
-      {/* Stars */}
+      {/* Temporal echoes (dots representing time moments) */}
       {stars.map(star => (
         <motion.div
           key={star.id}
-          className="absolute rounded-full bg-white"
+          className="absolute rounded-full bg-amber-200"
           style={{
             left: `${star.x}%`,
             top: `${star.y}%`,
             width: star.size,
             height: star.size,
             opacity: star.opacity,
+            boxShadow: `0 0 ${star.size * 3}px hsl(40 80% 55% / 0.4)`,
           }}
           animate={{
-            opacity: [star.opacity, star.opacity * 0.3, star.opacity],
-            scale: [1, 0.8, 1],
+            opacity: [star.opacity, star.opacity * 0.2, star.opacity],
+            scale: [1, 1.3, 1],
           }}
           transition={{
-            duration: 3 + Math.random() * 2,
+            duration: 4 + Math.random() * 3,
             repeat: Infinity,
             delay: star.animationDelay,
             ease: "easeInOut",
@@ -105,29 +106,31 @@ export function StarBackground() {
         />
       ))}
 
-      {/* Shooting stars */}
+      {/* Temporal waves (moving through time) */}
       {shootingStars.map(star => (
         <motion.div
           key={star.id}
-          className="absolute w-1 h-1 bg-white rounded-full"
+          className="absolute w-1.5 h-1.5 rounded-full"
           style={{
             left: `${star.startX}%`,
             top: `${star.startY}%`,
-            boxShadow: "0 0 6px 2px rgba(255,255,255,0.5), -20px 0 20px 2px rgba(255,255,255,0.3)",
+            background: "hsl(40 80% 55%)",
+            boxShadow: "0 0 12px 3px hsl(40 80% 55% / 0.6), -30px 0 30px 5px hsl(260 40% 50% / 0.3)",
           }}
           initial={{ x: 0, y: 0, opacity: 1 }}
-          animate={{ x: 300, y: 300, opacity: 0 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
+          animate={{ x: 400, y: 350, opacity: 0 }}
+          transition={{ duration: 2, ease: "easeOut" }}
         />
       ))}
 
-      {/* Constellation lines - subtle decorative */}
-      <svg className="absolute inset-0 w-full h-full opacity-10">
-        <line x1="10%" y1="20%" x2="25%" y2="35%" stroke="white" strokeWidth="0.5" />
-        <line x1="25%" y1="35%" x2="15%" y2="50%" stroke="white" strokeWidth="0.5" />
-        <line x1="70%" y1="15%" x2="85%" y2="25%" stroke="white" strokeWidth="0.5" />
-        <line x1="85%" y1="25%" x2="80%" y2="40%" stroke="white" strokeWidth="0.5" />
-        <line x1="60%" y1="70%" x2="75%" y2="80%" stroke="white" strokeWidth="0.5" />
+      {/* Gear pattern - subtle decorative temporal mechanism */}
+      <svg className="absolute inset-0 w-full h-full opacity-5">
+        <circle cx="15%" cy="25%" r="80" fill="none" stroke="hsl(40 80% 55%)" strokeWidth="1" />
+        <circle cx="15%" cy="25%" r="60" fill="none" stroke="hsl(40 80% 55%)" strokeWidth="1" opacity="0.5" />
+        <circle cx="75%" cy="70%" r="100" fill="none" stroke="hsl(35 70% 60%)" strokeWidth="1" />
+        <circle cx="75%" cy="70%" r="70" fill="none" stroke="hsl(35 70% 60%)" strokeWidth="1" opacity="0.5" />
+        <line x1="5%" y1="10%" x2="20%" y2="30%" stroke="hsl(260 40% 50%)" strokeWidth="0.8" opacity="0.4" />
+        <line x1="70%" y1="50%" x2="85%" y2="75%" stroke="hsl(260 40% 50%)" strokeWidth="0.8" opacity="0.4" />
       </svg>
     </div>
   );

@@ -1,186 +1,182 @@
-# Pradharshini 25 - Space-Themed Cultural Event Website Design Guidelines
+# Pradharshini 25 - Time Travel Themed Cultural Event Website Design Guidelines
 
 ## Design Approach
-**Reference-Based Approach** drawing inspiration from premium space-themed experiences like SpaceX, NASA's interactive sites, and cosmic design trends in modern web applications. The design emphasizes immersive storytelling through cosmic aesthetics while maintaining functionality and clarity.
+**Reference-Based Approach** inspired by premium temporal experiences like Watchmaker's craftsmanship sites, The Time Machine film aesthetics, steampunk luxury brands, and chrono-mechanical interfaces. The design fuses Victorian-era elegance with futuristic temporal technology, creating a mysterious, luxurious atmosphere.
 
 ## Core Design Principles
-- **Cosmic Immersion**: Deep space atmosphere with layered depth
-- **Premium Dynamism**: Subtle animations that enhance rather than distract
-- **Clear Hierarchy**: Information clarity despite dark theme
-- **Cultural Fusion**: Space theme meets traditional cultural event energy
+- **Temporal Luxury**: Rich vintage-futuristic aesthetic with layered chronological depth
+- **Mechanical Precision**: Clockwork-inspired interactions and geometric patterns
+- **Mysterious Elegance**: Sophisticated temporal narrative through visual storytelling
+- **Cultural Timelessness**: Time travel theme harmonizes with traditional cultural celebration
 
 ---
 
 ## Typography System
 
-**Primary Font**: "Orbitron" (Google Fonts) - futuristic, space-age aesthetic for headings
-**Secondary Font**: "Inter" (Google Fonts) - clean readability for body text
+**Primary Font**: "Cinzel" (Google Fonts) - elegant serif for headings, evokes classical timelessness
+**Secondary Font**: "Raleway" (Google Fonts) - refined sans-serif for body text, modern clarity
+**Accent Font**: "Courier Prime" (Google Fonts) - monospaced for timestamps and technical elements
 
 ### Type Scale
-- **Hero Heading**: text-6xl md:text-7xl lg:text-8xl, font-bold, tracking-tight
-- **Section Headings**: text-4xl md:text-5xl, font-bold
+- **Hero Heading**: text-6xl md:text-7xl lg:text-8xl, font-bold, tracking-wide, uppercase
+- **Section Headings**: text-4xl md:text-5xl, font-bold, tracking-wide
 - **Subsection Headings**: text-2xl md:text-3xl, font-semibold
 - **Body Large**: text-lg md:text-xl, leading-relaxed
 - **Body Standard**: text-base, leading-relaxed
-- **Small Text**: text-sm, for captions and metadata
+- **Timestamps/Technical**: text-sm md:text-base, font-mono
 
 ---
 
 ## Layout System
 
-**Spacing Primitives**: Use Tailwind units of 4, 8, 12, 16, 20, 24 for consistent rhythm (p-4, m-8, gap-12, etc.)
+**Spacing Primitives**: Tailwind units of 4, 8, 12, 16, 20, 24 for consistent rhythm
 
 **Container Strategy**:
 - Full-width sections: w-full with inner max-w-7xl mx-auto px-6 lg:px-8
 - Content sections: max-w-6xl mx-auto
-- Text content: max-w-4xl for optimal readability
+- Text content: max-w-4xl
 
-**Section Padding**: py-16 md:py-24 lg:py-32 for major sections
+**Section Padding**: py-16 md:py-24 lg:py-32
 
 ---
 
 ## Page Structure & Components
 
-### Landing Page (Multi-Section Approach)
+### Landing Page
 
-**1. Hero Section** (100vh)
-- Full viewport immersive entry point
-- Large hero heading: "PRADHARSHINI 25" with cosmic glow effect
-- Subheading: Event tagline/dates
-- Dual CTAs: "Explore Events" (primary) + "Register Now" (secondary) with blurred glass backgrounds
-- Background: Deep space starfield with subtle parallax layers
-- Floating particles/stars animation in background
-- **Hero Image**: YES - Use a cosmic nebula/galaxy background image with overlay gradient for text readability
+**1. Hero Section** (85vh)
+- Large ornate heading: "PRADHARSHINI 25" with vintage glow treatment
+- Subheading: "A Journey Through Time and Culture"
+- Temporal timestamp display: Countdown integrated with clock-face design
+- Dual CTAs: "Explore Timeline" + "Reserve Your Passage" with frosted glass backgrounds (backdrop-blur-md, semi-transparent)
+- **Hero Image**: Vintage pocket watch merged with swirling temporal rifts, gears visible, sepia-toned edges blending into deep indigo center, mechanical elements floating in temporal energy streams
 
-**2. Countdown Section** (auto-height)
-- Prominent event countdown timer
-- 4-column grid (Days | Hours | Minutes | Seconds) on desktop, 2-column on mobile
-- Each unit in glowing container with space-themed styling
-- Include event date prominently
+**2. Temporal Countdown** (auto-height)
+- Ornate clock-face inspired design
+- 4-column grid: Days | Hours | Minutes | Seconds in vintage meter/gauge styling
+- Each unit framed in decorative borders resembling clock components
+- Gear iconography and roman numerals
 
-**3. About Pradharshini** (auto-height)
-- 2-column layout (desktop): Left side - compelling narrative text, Right side - visual element (galaxy swirl or event logo with glow)
-- Single column on mobile
-- Include: Event history, mission, what makes it special, cultural significance
-- Statistics bar: 3-4 column grid showing impressive numbers (Years running, Expected participants, Events, Prize pool)
+**3. The Chronicle** (auto-height)
+- 2-column layout: Left - narrative about event legacy and cultural significance, Right - antique scroll imagery or vintage event emblem with metallic sheen
+- Statistics bar: 4-column grid (Years of Tradition | Time Travelers Expected | Cultural Epochs | Legendary Prizes) in ornate frames
+- Decorative separator: mechanical gear divider
 
-**4. Featured Events Showcase** (auto-height)
-- Grid of 6-8 event cards in 3-column layout (desktop), 2-column (tablet), 1-column (mobile)
-- Each card: Event icon/image, category badge, event name, brief description, "Learn More" link
-- Hover effect: subtle lift and glow
-- Categories: Music, Dance, Drama, Art, Technical, Literary, etc.
+**4. Event Epochs Gallery** (auto-height)
+- 3-column grid of event cards (2-col tablet, 1-col mobile)
+- 8-10 featured events with category badges (Music, Dance, Drama, Art, Technical, Literary)
+- Each card: Vintage icon, era-themed badge, event name, brief description, decorative border
+- Hover: subtle lift with metallic shimmer effect
+- **Images**: Sepia-toned or bronze-filtered photographs showing event categories
 
-**5. Event Highlights Timeline** (auto-height)
-- Vertical timeline showing major event days/phases
-- Alternating left-right layout for timeline items
-- Each item: Date badge, event cluster description, visual icon
-- Connecting line with glowing nodes
+**5. Temporal Timeline** (auto-height)
+- Vertical timeline with alternating left-right event clusters
+- Ornate connecting line with clock-hand markers
+- Each node: Date in vintage timestamp format, event phase description, decorative flourish
+- Gear and cog embellishments at key junctures
 
-**6. Why Attend** (auto-height)
-- 4-column grid of benefits/features
-- Each card: Icon, heading, description
-- Examples: "Network with 5000+ students", "Win prizes worth X", "Cultural immersion", "Celebrity performances"
+**6. Why Journey With Us** (auto-height)
+- 4-column grid of compelling reasons
+- Each card: Vintage icon (hourglass, compass, key, crown), heading, description
+- Examples: "Network Across 5000+ Timelines", "Claim Legendary Treasures", "Cultural Temporal Fusion", "Witness Master Performances"
 
-**7. Past Edition Gallery** (auto-height)
-- Masonry grid or carousel of previous event photos
-- 3-4 columns on desktop
-- Quick glimpse into the event's legacy and energy
+**7. Archives Gallery** (auto-height)
+- Masonry grid of past event photographs in vintage frames
+- 4-column desktop, 3-column tablet, 2-column mobile
+- Sepia tone or bronze treatment on images
+- Ornate frame borders around each photo
 
-**8. Contact & Registration CTA** (auto-height)
-- 2-column split: Left - Contact form, Right - Event details (venue, dates, contact info, social links)
-- Form fields: Name, Email, Phone, College, Message
-- Prominent "Submit" button
-- Map integration or location details
-- Social media icon links (Instagram, Twitter, Facebook)
+**8. Temporal Coordinates** (auto-height)
+- 2-column split: Left - Contact form in vintage telegram style, Right - Event details (venue as "temporal anchor point", dates, contact methods, social portals)
+- Form: Name, Email, Temporal ID (Phone), Origin (College), Message
+- Map integrated with vintage cartography styling
+- Social icons in brass/copper treatment
 
 **9. Footer**
-- 3-column layout: About/Links | Quick Links (Events, Register, Contact) | Social & Newsletter
-- Newsletter signup field
-- Copyright and organizer credits
-- Floating back-to-top button
+- 3-column: About & Legacy | Navigation Links | Social Connections & Chronicles (newsletter)
+- Newsletter signup: "Subscribe to Temporal Dispatches"
+- Copyright in vintage typewriter format
+- Decorative gear patterns as background elements
 
 ### About Us Page
-- Hero banner with page title
-- Detailed event history and evolution (timeline format)
-- Organizing committee section with profiles (grid of cards)
-- College information and cultural significance
-- Photo gallery from past editions
+- Vintage banner hero with ornate page title
+- Timeline format: Event evolution through the ages
+- Organizing council profiles in vintage portrait card frames (3-4 columns)
+- College heritage and cultural temporal significance
+- Gallery of historical moments in decorative frames
 
 ### Events Page
-- Filterable event grid by category
-- Each event gets expanded card: Full description, schedule, rules, prizes, registration button
-- Category navigation (Music, Dance, Drama, Technical, Art, Literary)
-- Schedule view option (day-wise breakdown)
+- Filterable grid by cultural epoch/category
+- Expanded event cards: Full descriptions in vintage paper texture containers, schedules in timeline format, rules, prizes displayed as medallions
+- Category navigation with era-themed badges
+- Day-wise breakdown in chronological scroll format
 
 ### Contact Us Page
-- Large contact form as primary focus
-- Location details with map integration
-- Multiple contact methods (Email, Phone, Social)
-- FAQ accordion section
-- Office hours and response time expectations
+- Centered large contact form as vintage correspondence
+- Location "temporal coordinates" with map
+- Multiple contact portals (Telegraph/Email, Chrono-Phone, Social Rifts)
+- FAQ accordion with brass hardware-inspired toggles
+- Response time as "temporal delivery estimates"
 
 ---
 
 ## Component Library
 
 ### Navigation
-- Sticky header with glass-morphism effect (blurred background)
-- Logo left, nav links center/right
-- Mobile: Hamburger menu with full-screen overlay
-- Active state: subtle glow under current page
+- Sticky header with frosted glass effect (backdrop-blur-lg, semi-transparent)
+- Logo left with vintage embellishment, nav links in refined typography
+- Mobile: Full-screen overlay with mechanical transition
+- Active state: subtle metallic underline
 
 ### Cards
-- Semi-transparent dark containers with subtle border glow
-- Rounded corners (rounded-xl)
-- Hover: slight elevation and glow intensification
+- Containers with vintage paper texture or dark slate backgrounds
+- Decorative borders with corner flourishes
+- Rounded corners (rounded-lg)
+- Hover: subtle elevation with bronze glow
 - Padding: p-6 md:p-8
 
 ### Buttons
-**Primary**: Gradient background (cosmic purple to blue), white text, rounded-full, px-8 py-3
-**Secondary**: Transparent with glowing border, white text
-**On Images**: Blurred glass background (backdrop-blur-md, bg-white/20)
+**Primary**: Bronze-to-copper gradient, cream text, vintage border ornaments, rounded-lg, px-8 py-3
+**Secondary**: Transparent with decorative metallic border
+**On Images**: Frosted glass (backdrop-blur-md, semi-transparent warm tone)
 
 ### Forms
-- Input fields: Dark background with glowing border on focus
-- Labels: Subtle text above fields
-- Submit button: Primary button style
-- Validation states with glow color changes
+- Inputs: Dark backgrounds with bronze borders, focus state glows copper
+- Labels: Elegant serif typography
+- Submit: Primary button styling with vintage embellishment
+- Validation: Bronze/copper glow indicators
 
-### Animations (Minimal & Strategic)
-- **Hero only**: Floating particles, subtle parallax on scroll
-- **Cards**: Gentle hover lift and glow
-- **Page transitions**: Smooth fade-ins for sections on scroll-into-view
-- **Avoid**: Excessive movement, spinning elements, distracting effects
+### Icons
+**Library**: Font Awesome (CDN)
+- Clock, Hourglass, Compass, Key, Scroll, Crown, Gear, Calendar, Location, Envelope, Phone, Trophy, Users, Music, Drama masks
+
+### Animations (Strategic & Minimal)
+- Hero: Gentle gear rotation in background, subtle parallax on scroll
+- Cards: Refined hover lift with metallic shimmer
+- Timeline nodes: Fade-in on scroll
+- Avoid excessive movement
 
 ---
 
 ## Images
 
-**Hero Image**: Large cosmic nebula/galaxy background (deep purples, blues, hints of pink). Should be high-resolution, covering full viewport. Apply dark gradient overlay for text contrast.
+**Hero Image**: Vintage pocket watch with exposed gears, swirling temporal energy (deep indigo/purple rifts), bronze/copper mechanical elements, layered depth with sepia edges transitioning to vibrant temporal core. High-resolution, full viewport coverage.
 
-**Section Backgrounds**: Subtle star-field patterns, constellation line art as decorative elements
+**Section Backgrounds**: Subtle clockwork patterns, vintage blueprint grids, constellation-like gear arrangements
 
-**Event Cards**: Space-themed icons or photography relevant to each cultural event category
+**Event Cards**: Sepia or bronze-filtered category imagery, vintage icons for cultural events
 
-**Gallery**: Photos from previous Pradharshini events showing participants, performances, crowds
+**Gallery**: Past event photos with vintage photo frame treatments, warm tone filters
 
-**About Section**: Event logo with cosmic glow treatment, organizational graphics
-
----
-
-## Icons
-**Library**: Font Awesome (via CDN) for consistent iconography
-- Use solid style for primary icons
-- Light/regular for secondary elements
-- Examples needed: Calendar, Location, Email, Phone, Star, Trophy, Users, Music, Drama masks
+**Decorative Elements**: Ornate corner flourishes, gear dividers, brass embellishments, antique scroll borders
 
 ---
 
 ## Accessibility
-- Maintain WCAG AA contrast ratios despite dark theme (light text on dark backgrounds)
-- Form labels properly associated
-- Keyboard navigation support
-- Focus states clearly visible with glow effects
+- WCAG AA contrast: Cream/ivory text on dark slate/indigo backgrounds
+- Proper form label associations
+- Keyboard navigation with visible focus states (bronze glow)
 - Alt text for all images
+- Semantic HTML structure
 
-This premium space-themed design creates an immersive, memorable experience that matches the grandeur of Pradharshini 25 while maintaining usability and clear information architecture.
+This luxurious time-travel design creates an immersive temporal experience, blending Victorian elegance with futuristic chrono-mechanical aesthetics while maintaining clarity and sophisticated cultural celebration.
