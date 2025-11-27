@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
-import { Award, Users, Zap } from "lucide-react";
+import { Award, Users, Zap, History, Music, Palette } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const editions = [
@@ -114,22 +114,110 @@ export default function About() {
             className="text-center mb-16"
           >
             <span className="text-primary font-display text-sm tracking-widest uppercase mb-4 block">
-              Our Journey
+              About Pradharshini
             </span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="gradient-cosmic-text">Pradharshini Legacy</span>
+              <span className="gradient-cosmic-text">Where Culture Thrives</span>
             </h1>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              A chronicle of excellence, celebrating three years of cultural revolution at Kilpauk Medical College. From humble beginnings to record-breaking achievements, witness the evolution of a festival that changed the cultural landscape.
+              Conducted by Government Kilpauk Medical College (GKMC), Pradharshini is an intercollegiate cultural extravaganza where versatile talents converge to illustrate their flair.
+            </p>
+          </motion.div>
+
+          {/* About Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16"
+          >
+            <Card className="glass border border-border/50">
+              <CardContent className="p-8">
+                <h2 className="font-display text-2xl font-bold mb-4 text-foreground">About Pradharshini</h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  Ever since its inception in 1978, Pradharshini has spread its roots across Tamil Nadu and the rest of the country at large. Usually held during September, Pradharshini captures the attention of college students throughout the city for the entirety of its duration. After a brief hiatus, Pradharshini, the crown jewel of GKMC, returned and has once again risen like a phoenix to its former glory.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="glass border border-border/50">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <History className="w-6 h-6 text-primary" />
+                  <h2 className="font-display text-2xl font-bold text-foreground">History</h2>
+                </div>
+                <p className="text-muted-foreground leading-relaxed">
+                  Pradharshini began in 1978 as a small event, with participation from only a handful of colleges across Tamil Nadu. Since then, it has only continued to grow in size and now witnesses participation from over 100 colleges annually. In recent years, Pradharshini has attracted over 30,000 students from various medical as well as non-medical colleges.
+                </p>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          {/* Our Events Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-16 p-8 md:p-12 rounded-xl glass border border-primary/20"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <Palette className="w-8 h-8 text-primary" />
+              <h2 className="font-display text-3xl font-bold text-foreground">Our Events</h2>
+            </div>
+            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+              Pradharshini, an exhibition of cultural arts, is one of South India's biggest cultural festivals and is the biggest event conducted by a South Indian medical college. Although Pradharshini covers a plethora of cultural activities, the main highlights include:
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div className="flex items-start gap-4">
+                <Music className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-foreground mb-2">Music Show</h3>
+                  <p className="text-muted-foreground text-sm">Premier showcase of musical talents from across South India</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <Music className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-foreground mb-2">Variety & Choreo Night</h3>
+                  <p className="text-muted-foreground text-sm">High-energy performances featuring dance and theatrical acts</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <Palette className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-foreground mb-2">Fashion Parade</h3>
+                  <p className="text-muted-foreground text-sm">Cutting-edge fashion displays and style competitions</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <Award className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-foreground mb-2">Casual Contests</h3>
+                  <p className="text-muted-foreground text-sm">Channel Surfing, Rangoli, Painting, Photography, and more</p>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-muted-foreground text-sm">
+              <span className="text-primary font-semibold">Additional Events:</span> Singing, Short Film, Shipwreck, Creative Writing, Quizzes, Adzap, JAM, Mono-acting and Dancing competitions
             </p>
           </motion.div>
 
           {/* Editions Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {editions.map((edition, index) => (
-              <EditionCard key={edition.year} edition={edition} index={index} />
-            ))}
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mb-16"
+          >
+            <h2 className="font-display text-3xl font-bold mb-8 text-center text-foreground">Previous Editions</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {editions.map((edition, index) => (
+                <EditionCard key={edition.year} edition={edition} index={index} />
+              ))}
+            </div>
+          </motion.div>
 
           {/* Impact Section */}
           <motion.div
