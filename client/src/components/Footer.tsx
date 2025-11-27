@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Sparkles, ArrowUp, Mail, Instagram, Facebook, Twitter, Youtube } from "lucide-react";
+import { Sparkles, ArrowUp, Mail, Instagram, Facebook, Twitter, Youtube, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
@@ -23,10 +23,13 @@ const eventCategories = [
 ];
 
 const socialLinks = [
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Youtube, href: "#", label: "YouTube" },
+  { icon: Instagram, href: "https://instagram.com/medrenaline.kmc", label: "Instagram" },
+  { icon: Mail, href: "mailto:medrenaline.2025@gmail.com", label: "Email" },
+];
+
+const contactInfo = [
+  { label: "Naresh R", phone: "8939276895" },
+  { label: "Mahashwethha Y", phone: "7448833936" },
 ];
 
 export function Footer() {
@@ -60,31 +63,59 @@ export function Footer() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
-          {/* Brand */}
+          {/* Reach Us */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <Sparkles className="w-6 h-6 text-primary" />
-              <span className="font-display text-xl font-bold gradient-cosmic-text">
-                PRADHARSHINI
-              </span>
+            <h4 className="font-display text-sm font-semibold text-foreground mb-4">
+              Reach Us
+            </h4>
+            <div className="space-y-4">
+              <div className="flex gap-3 text-sm">
+                <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <p className="font-semibold text-foreground">Kilpauk Medical College</p>
+                  <p className="text-muted-foreground">822, Poonamallee High Rd,</p>
+                  <p className="text-muted-foreground">Kilpauk, Chennai,</p>
+                  <p className="text-muted-foreground">Tamil Nadu 600010</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    className="w-9 h-9 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors hover-elevate"
+                    aria-label={social.label}
+                    data-testid={`footer-social-${social.label.toLowerCase()}`}
+                  >
+                    <social.icon className="w-4 h-4" />
+                  </a>
+                ))}
+              </div>
             </div>
-            <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
-              The ultimate cultural extravaganza where creativity meets cosmic energy. 
-              Join us in celebrating art, music, dance, and more.
-            </p>
-            <div className="flex gap-3">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  className="w-9 h-9 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors hover-elevate"
-                  aria-label={social.label}
-                  data-testid={`footer-social-${social.label.toLowerCase()}`}
-                >
-                  <social.icon className="w-4 h-4" />
-                </a>
+          </div>
+
+          {/* Connect With Us */}
+          <div>
+            <h4 className="font-display text-sm font-semibold text-foreground mb-4">
+              Connect With Us
+            </h4>
+            <ul className="space-y-4">
+              {contactInfo.map((contact) => (
+                <li key={contact.label} className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 text-primary flex-shrink-0" />
+                  <div>
+                    <p className="text-sm font-medium text-foreground">{contact.label}</p>
+                    <p className="text-xs text-muted-foreground">{contact.phone}</p>
+                  </div>
+                </li>
               ))}
-            </div>
+              <li className="flex items-center gap-3">
+                <Mail className="w-4 h-4 text-primary flex-shrink-0" />
+                <div>
+                  <p className="text-xs text-muted-foreground break-all">studentcouncilkmc@gmail.com</p>
+                </div>
+              </li>
+            </ul>
           </div>
 
           {/* Quick Links */}
@@ -104,59 +135,39 @@ export function Footer() {
                   </a>
                 </li>
               ))}
+              <li>
+                <a
+                  href="https://chat.whatsapp.com"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  data-testid="footer-link-whatsapp"
+                >
+                  WhatsApp Group
+                </a>
+              </li>
             </ul>
           </div>
 
-          {/* Events */}
+          {/* Brand */}
           <div>
-            <h4 className="font-display text-sm font-semibold text-foreground mb-4">
-              Event Categories
-            </h4>
-            <ul className="space-y-3">
-              {eventCategories.map((category) => (
-                <li key={category}>
-                  <span className="text-sm text-muted-foreground">
-                    {category}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Newsletter */}
-          <div>
-            <h4 className="font-display text-sm font-semibold text-foreground mb-4">
-              Stay Updated
-            </h4>
-            <p className="text-sm text-muted-foreground mb-4">
-              Subscribe to our newsletter for the latest updates and announcements.
+            <div className="flex items-center gap-2 mb-4">
+              <Sparkles className="w-6 h-6 text-primary" />
+              <span className="font-display text-lg font-bold gradient-cosmic-text">
+                PRADHARSHINI
+              </span>
+            </div>
+            <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+              The ultimate cultural extravaganza where creativity meets cosmic energy at Kilpauk Medical College.
             </p>
-            <form onSubmit={handleNewsletterSubmit} className="space-y-3" data-testid="newsletter-form">
-              <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="pl-10 bg-background/50 border-border/50 focus:border-primary"
-                  data-testid="input-newsletter-email"
-                />
-              </div>
-              <Button type="submit" className="w-full font-display text-xs tracking-wider" data-testid="button-subscribe">
-                Subscribe
-              </Button>
-            </form>
           </div>
         </div>
 
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-border/30 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground text-center md:text-left">
-            &copy; 2025 Pradharshini. All rights reserved. | Organized by XYZ College Cultural Committee
+            &copy; 2025 Govt Kilpauk Medical College and Hospital. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <span className="text-xs text-muted-foreground">Made with cosmic energy</span>
+            <span className="text-xs text-muted-foreground">medrenaline.2025@gmail.com</span>
           </div>
         </div>
       </div>
