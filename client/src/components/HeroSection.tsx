@@ -135,10 +135,10 @@ export function HeroSection() {
             size="lg" 
             variant="outline"
             className="font-display text-sm tracking-wider px-8 glass border-primary/30 hover:border-primary/50"
-            onClick={scrollToContact}
-            data-testid="hero-register-button"
+            onClick={() => window.open("https://drive.google.com", "_blank")}
+            data-testid="hero-rulebook-button"
           >
-            REGISTER NOW
+            RULE BOOK
           </Button>
         </motion.div>
 
