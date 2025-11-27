@@ -34,25 +34,22 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Location",
-    details: ["XYZ College of Engineering", "123 University Road, Chennai", "Tamil Nadu - 600001"],
+    details: ["Kilpauk Medical College", "822, Poonamallee High Rd, Kilpauk", "Chennai, Tamil Nadu - 600010"],
   },
   {
     icon: Mail,
     title: "Email",
-    details: ["pradharshini25@college.edu", "events@pradharshini.com"],
+    details: ["studentcouncilkmc@gmail.com"],
   },
   {
     icon: Phone,
     title: "Phone",
-    details: ["+91 98765 43210", "+91 98765 43211"],
+    details: ["Naresh R: +91 8939276895", "Mahashwethha Y: +91 7448833936"],
   },
 ];
 
 const socialLinks = [
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Youtube, href: "#", label: "YouTube" },
+  { icon: Instagram, href: "https://instagram.com/medrenaline.kmc", label: "Instagram" },
 ];
 
 export function ContactSection() {
@@ -116,7 +113,7 @@ export function ContactSection() {
             <span className="gradient-cosmic-text">Contact Us</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Have questions? Ready to register? Reach out to us and we'll guide you through your cosmic journey.
+            Have questions? Ready to participate? Connect with us and be part of the greatest cultural event of the year.
           </p>
         </motion.div>
 
