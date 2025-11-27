@@ -42,6 +42,30 @@ export function HeroSection() {
         transition={{ type: "spring", stiffness: 50, damping: 20 }}
       />
 
+      {/* Multiple glowing orbs for depth */}
+      <motion.div
+        className="absolute top-20 right-1/4 w-40 h-40 rounded-full pointer-events-none opacity-15 blur-2xl"
+        style={{
+          background: "radial-gradient(circle, hsl(260 40% 50% / 0.3) 0%, transparent 70%)",
+        }}
+        animate={{ 
+          y: [0, 30, 0],
+          x: [0, 20, 0]
+        }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute bottom-20 left-1/3 w-32 h-32 rounded-full pointer-events-none opacity-20 blur-2xl"
+        style={{
+          background: "radial-gradient(circle, hsl(35 70% 55% / 0.4) 0%, transparent 70%)",
+        }}
+        animate={{ 
+          y: [0, -25, 0],
+          x: [0, -15, 0]
+        }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+      />
+
       {/* Floating decorative elements - now interactive */}
       <motion.div
         className="absolute top-1/4 left-10 w-3 h-3 rounded-full bg-primary/60"
@@ -84,50 +108,62 @@ export function HeroSection() {
       </motion.div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Pre-title */}
+        {/* Pre-title with enhanced glow */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex items-center justify-center gap-2 mb-6 group"
         >
           <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+            animate={{ rotate: 360, scale: [1, 1.2, 1] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+            className="origin-center"
           >
-            <Star className="w-4 h-4 text-primary" />
+            <Star className="w-5 h-5 text-primary animate-glow-pulse" />
           </motion.div>
           <motion.span 
-            className="text-sm md:text-base font-medium text-muted-foreground tracking-widest uppercase"
+            className="text-sm md:text-base font-medium text-primary tracking-widest uppercase animate-text-glow"
             whileHover={{ 
-              textShadow: "0 0 8px hsl(40 80% 55% / 0.5), 0 0 16px hsl(260 40% 50% / 0.3)",
-              letterSpacing: "0.1em"
+              textShadow: "0 0 12px hsl(40 80% 55% / 0.8), 0 0 24px hsl(260 40% 50% / 0.5)",
+              letterSpacing: "0.15em",
+              scale: 1.05
             }}
           >
             Where Glory Beckons
           </motion.span>
           <motion.div
-            animate={{ rotate: -360 }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+            animate={{ rotate: -360, scale: [1, 1.2, 1] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+            className="origin-center"
           >
-            <Star className="w-4 h-4 text-primary" />
+            <Star className="w-5 h-5 text-primary animate-glow-pulse" />
           </motion.div>
         </motion.div>
 
-        {/* Main Title - Logo Image */}
+        {/* Main Title - Logo Image with glow */}
         <motion.div
-          initial={{ opacity: 0, y: 30, scale: 0.9 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="flex justify-center mb-6"
+          initial={{ opacity: 0, y: 30, scale: 0.8, filter: "blur(10px)" }}
+          animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+          transition={{ duration: 1, delay: 0.15, ease: "easeOut" }}
+          className="flex justify-center mb-6 relative"
           style={{ x: mouseX, y: mouseY }}
         >
+          {/* Glow background */}
+          <motion.div
+            className="absolute -inset-20 rounded-full bg-gradient-to-r from-primary/20 via-accent/10 to-secondary/20 blur-3xl"
+            animate={{ 
+              scale: [1, 1.1, 1],
+              opacity: [0.5, 0.8, 0.5]
+            }}
+            transition={{ duration: 3, repeat: Infinity }}
+          />
           <motion.img 
             src={pradharshiniImage} 
             alt="Pradharshini 2026" 
-            className="h-32 md:h-40 lg:h-48 object-contain filter invert"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            className="h-32 md:h-40 lg:h-48 object-contain filter invert relative z-10"
+            whileHover={{ scale: 1.08 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
           />
         </motion.div>
 
@@ -200,12 +236,21 @@ export function HeroSection() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
         >
           <motion.div
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="relative group"
           >
+            {/* Button glow on hover */}
+            <motion.div
+              className="absolute -inset-1 bg-gradient-to-r from-primary via-accent to-primary rounded-lg opacity-0 blur group-hover:opacity-75 transition-opacity duration-300"
+              animate={{ 
+                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+              }}
+              transition={{ duration: 3, repeat: Infinity }}
+            />
             <Button 
               size="lg" 
-              className="font-display text-sm tracking-wider px-8 shadow-lg hover:shadow-primary/50"
+              className="font-display text-sm tracking-wider px-8 shadow-lg hover:shadow-primary/50 relative"
               onClick={goToEvents}
               data-testid="hero-explore-button"
             >
@@ -213,13 +258,22 @@ export function HeroSection() {
             </Button>
           </motion.div>
           <motion.div
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="relative group"
           >
+            {/* Secondary button glow */}
+            <motion.div
+              className="absolute -inset-1 bg-gradient-to-r from-secondary via-primary to-secondary rounded-lg opacity-0 blur group-hover:opacity-50 transition-opacity duration-300"
+              animate={{ 
+                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+              }}
+              transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
+            />
             <Button 
               size="lg" 
               variant="outline"
-              className="font-display text-sm tracking-wider px-8 glass border-primary/30 hover:border-primary/50"
+              className="font-display text-sm tracking-wider px-8 glass border-primary/30 hover:border-primary/50 relative"
               onClick={() => window.open("https://drive.google.com/file/d/10d520nYkXtySwXjTiLEhFBtOwXx46arC/view?usp=sharing", "_blank")}
               data-testid="hero-rulebook-button"
             >
