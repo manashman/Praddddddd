@@ -79,7 +79,7 @@ export function Navigation() {
               ))}
               <Button 
                 className="ml-4 font-display text-xs tracking-wider"
-                onClick={() => window.open("/attached_assets/PRADHARSHINI'24 RULEBOOK_1764269238394.pdf", "_blank")}
+                onClick={() => window.open("https://drive.google.com/file/d/10d520nYkXtySwXjTiLEhFBtOwXx46arC/view?usp=sharing", "_blank")}
                 data-testid="nav-rulebook-button"
               >
                 RULE BOOK
@@ -129,7 +129,7 @@ export function Navigation() {
               >
                 <Button 
                   className="mt-4 font-display tracking-wider"
-                  onClick={() => window.open("/attached_assets/PRADHARSHINI'24 RULEBOOK_1764269238394.pdf", "_blank")}
+                  onClick={() => window.open("https://drive.google.com/file/d/10d520nYkXtySwXjTiLEhFBtOwXx46arC/view?usp=sharing", "_blank")}
                   data-testid="mobile-rulebook-button"
                 >
                   RULE BOOK

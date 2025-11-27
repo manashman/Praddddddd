@@ -135,7 +135,7 @@ export function HeroSection() {
             size="lg" 
             variant="outline"
             className="font-display text-sm tracking-wider px-8 glass border-primary/30 hover:border-primary/50"
-            onClick={() => window.open("/attached_assets/PRADHARSHINI'24 RULEBOOK_1764269238394.pdf", "_blank")}
+            onClick={() => window.open("https://drive.google.com/file/d/10d520nYkXtySwXjTiLEhFBtOwXx46arC/view?usp=sharing", "_blank")}
             data-testid="hero-rulebook-button"
           >
             RULE BOOK
