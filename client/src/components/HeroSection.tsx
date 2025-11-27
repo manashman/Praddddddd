@@ -9,6 +9,7 @@ import pradharshiniImage from "@assets/prad 2026 title new_1764267906090.png";
 export function HeroSection() {
   const [, navigate] = useLocation();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -24,24 +25,37 @@ export function HeroSection() {
     mouseX.set(x * 0.05);
     mouseY.set(y * 0.05);
     setMousePosition({ x, y });
+    setCursorPosition({ x: e.clientX, y: e.clientY });
   };
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden" onMouseMove={handleMouseMove}>
-      {/* Floating decorative elements */}
+      {/* Interactive cursor glow */}
+      <motion.div
+        className="fixed w-80 h-80 rounded-full pointer-events-none opacity-20 blur-3xl"
+        style={{
+          background: "radial-gradient(circle, hsl(40 80% 55% / 0.4) 0%, transparent 70%)",
+          left: cursorPosition.x - 160,
+          top: cursorPosition.y - 160,
+        }}
+        animate={{}}
+        transition={{ type: "spring", stiffness: 50, damping: 20 }}
+      />
+
+      {/* Floating decorative elements - now interactive */}
       <motion.div
         className="absolute top-1/4 left-10 w-3 h-3 rounded-full bg-primary/60"
-        animate={{ y: [-20, 20, -20] }}
+        animate={{ y: [-20, 20, -20], x: [mousePosition.x * 0.02, -mousePosition.x * 0.02] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
         className="absolute top-1/3 right-20 w-2 h-2 rounded-full bg-secondary/60"
-        animate={{ y: [20, -20, 20] }}
+        animate={{ y: [20, -20, 20], x: [-mousePosition.x * 0.02, mousePosition.x * 0.02] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       />
       <motion.div
         className="absolute bottom-1/3 left-1/4 w-4 h-4 rounded-full bg-accent/40"
-        animate={{ y: [-15, 15, -15] }}
+        animate={{ y: [-15, 15, -15], x: [mousePosition.x * 0.015, -mousePosition.x * 0.015] }}
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
       />
 
@@ -75,13 +89,29 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex items-center justify-center gap-2 mb-6"
+          className="flex items-center justify-center gap-2 mb-6 group"
         >
-          <Star className="w-4 h-4 text-primary animate-pulse" />
-          <span className="text-sm md:text-base font-medium text-muted-foreground tracking-widest uppercase">
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+          >
+            <Star className="w-4 h-4 text-primary" />
+          </motion.div>
+          <motion.span 
+            className="text-sm md:text-base font-medium text-muted-foreground tracking-widest uppercase"
+            whileHover={{ 
+              textShadow: "0 0 8px hsl(40 80% 55% / 0.5), 0 0 16px hsl(260 40% 50% / 0.3)",
+              letterSpacing: "0.1em"
+            }}
+          >
             Where Glory Beckons
-          </span>
-          <Star className="w-4 h-4 text-primary animate-pulse" />
+          </motion.span>
+          <motion.div
+            animate={{ rotate: -360 }}
+            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+          >
+            <Star className="w-4 h-4 text-primary" />
+          </motion.div>
         </motion.div>
 
         {/* Main Title - Logo Image */}
@@ -112,6 +142,12 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.65 }}
+            whileHover={{
+              textShadow: "0 0 12px hsl(40 80% 55% / 0.3)",
+              scale: 1.02,
+              color: "hsl(40 80% 55%)"
+            }}
+            className="cursor-pointer transition-colors"
           >
             Step into a temporal journey of culture, creativity, and timeless celebration.
           </motion.p>
@@ -120,6 +156,11 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.75 }}
             className="hidden md:block"
+            whileHover={{
+              textShadow: "0 0 12px hsl(260 40% 50% / 0.4)",
+              scale: 1.02,
+              color: "hsl(260 40% 50%)"
+            }}
           >
             History awaits your legacy.
           </motion.p>
@@ -132,10 +173,23 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.7 }}
           className="mb-8"
         >
-          <span className="inline-flex items-center gap-2 px-6 py-2 rounded-full glass border border-primary/20 text-sm md:text-base font-medium">
-            <Rocket className="w-4 h-4 text-primary" />
+          <motion.span 
+            className="inline-flex items-center gap-2 px-6 py-2 rounded-full glass border border-primary/20 text-sm md:text-base font-medium cursor-pointer"
+            whileHover={{ 
+              scale: 1.05,
+              borderColor: "hsl(40 80% 55%)",
+              boxShadow: "0 0 20px hsl(40 80% 55% / 0.3)"
+            }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+            >
+              <Rocket className="w-4 h-4 text-primary" />
+            </motion.div>
             <span className="text-foreground">January 30, 31 & February 1, 2026</span>
-          </span>
+          </motion.span>
         </motion.div>
 
         {/* CTA Buttons */}
