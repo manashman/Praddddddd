@@ -24,98 +24,115 @@ import { Badge } from "@/components/ui/badge";
 const eventCategories = [
   {
     id: 1,
-    name: "Music",
-    title: "Symphony of Time",
-    icon: Music,
-    description: "Battle of bands, solo performances, vocal competitions, and orchestral showcases across multiple eras of music.",
-    events: [
-      { name: "Band Battle", date: "Jan 30", venue: "Auditorium" },
-      { name: "Solo Vocal", date: "Jan 30", venue: "Stage A" },
-      { name: "Instrumental", date: "Jan 31", venue: "Stage B" },
-    ]
-  },
-  {
-    id: 2,
     name: "Dance",
     title: "Temporal Motion",
     icon: Mic2,
     description: "Classical, contemporary, and fusion dance competitions showcasing movement through time.",
     events: [
-      { name: "Classical Dance", date: "Jan 30", venue: "Dance Hall" },
-      { name: "Contemporary", date: "Jan 30", venue: "Dance Hall" },
-      { name: "Fusion", date: "Jan 31", venue: "Dance Hall" },
+      { name: "Solo Choreo" },
+      { name: "Duet Choreo" },
+      { name: "Adapt Tunes" },
+      { name: "Replica" },
+      { name: "Traditional Group Dance" },
+      { name: "Western Group Dance" },
+    ]
+  },
+  {
+    id: 2,
+    name: "Music",
+    title: "Symphony of Time",
+    icon: Music,
+    description: "Battle of bands, solo performances, vocal competitions, and orchestral showcases across multiple eras of music.",
+    events: [
+      { name: "Solo Singing" },
+      { name: "Duet Singing" },
+      { name: "Solo Instrumentals" },
+      { name: "Beatboxing" },
+      { name: "Battle of Bands" },
     ]
   },
   {
     id: 3,
-    name: "Art",
-    title: "Canvas of Ages",
-    icon: Palette,
-    description: "Painting, sketching, and digital art competitions bringing historical and futuristic visions to life.",
-    events: [
-      { name: "Painting", date: "Jan 30", venue: "Art Studio" },
-      { name: "Sketching", date: "Jan 30", venue: "Art Studio" },
-      { name: "Digital Art", date: "Jan 31", venue: "Art Studio" },
-    ]
-  },
-  {
-    id: 4,
-    name: "Drama",
+    name: "Theatre",
     title: "Theatre Chronicles",
     icon: Drama,
     description: "Theatrical performances and street plays depicting historical narratives and contemporary stories.",
     events: [
-      { name: "One Act Play", date: "Jan 31", venue: "Theatre" },
-      { name: "Street Play", date: "Jan 31", venue: "Central Arena" },
-      { name: "Monologue", date: "Feb 1", venue: "Theatre" },
+      { name: "Variety" },
+      { name: "Shipwreck" },
+      { name: "Channel Surfing" },
+      { name: "Adzap" },
+      { name: "Mimicry" },
+      { name: "Monoacting" },
+      { name: "Rangoli" },
+      { name: "Gasless Cooking" },
+      { name: "Antakshari" },
+      { name: "Connexions" },
+      { name: "Movie Spoof" },
+    ]
+  },
+  {
+    id: 4,
+    name: "Fashion",
+    title: "Canvas of Ages",
+    icon: Palette,
+    description: "Fashion and artistic performances bringing style and creativity to life.",
+    events: [
+      { name: "Fashion Parade" },
+      { name: "Mehendi" },
+      { name: "Face Painting" },
+      { name: "Body Building" },
+      { name: "Soap Carving" },
     ]
   },
   {
     id: 5,
-    name: "Literary",
-    title: "Words Across Time",
-    icon: PenTool,
-    description: "Poetry, creative writing, debate, and storytelling competitions for literary enthusiasts.",
+    name: "Quiz",
+    title: "Minds of Time",
+    icon: Code,
+    description: "Knowledge competitions testing expertise across diverse domains.",
     events: [
-      { name: "Poetry Recitation", date: "Jan 30", venue: "Auditorium" },
-      { name: "Creative Writing", date: "Jan 30", venue: "Hall A" },
-      { name: "Debate", date: "Jan 31", venue: "Hall B" },
+      { name: "GK Quiz" },
+      { name: "Fandom Quiz" },
+      { name: "Anime Quiz" },
     ]
   },
   {
     id: 6,
-    name: "Photography",
-    title: "Lens of Legacy",
-    icon: Camera,
-    description: "Photography contest capturing moments that define history and culture.",
+    name: "Literary",
+    title: "Words Across Time",
+    icon: PenTool,
+    description: "Poetry, creative writing, debate, and storytelling competitions in Tamil and English.",
     events: [
-      { name: "Thematic Photography", date: "Jan 30", venue: "Submissions" },
-      { name: "Portrait Photography", date: "Jan 31", venue: "Submissions" },
-      { name: "Architecture", date: "Feb 1", venue: "Submissions" },
+      { name: "Tamil Kavithai" },
+      { name: "Kaviarangam" },
+      { name: "Vaarthail Vettai" },
+      { name: "Tamil Debate" },
+      { name: "Tamil Extempore" },
+      { name: "Tamil Creative Writing" },
+      { name: "English Debate" },
+      { name: "English Extempore" },
+      { name: "English Creative Writing" },
+      { name: "Flash Fiction" },
+      { name: "Block & Tackle" },
+      { name: "English Poetry" },
+      { name: "English Performance Poetry" },
     ]
   },
   {
     id: 7,
-    name: "Gaming",
+    name: "Online",
     title: "Digital Arenas",
-    icon: Gamepad2,
-    description: "E-sports tournaments and gaming competitions testing skills in virtual worlds.",
+    icon: Camera,
+    description: "Digital competitions showcasing creativity in photography, film, and design.",
     events: [
-      { name: "VALORANT", date: "Jan 30", venue: "Gaming Lab" },
-      { name: "CS:GO", date: "Jan 30", venue: "Gaming Lab" },
-      { name: "Mobile Gaming", date: "Jan 31", venue: "Gaming Lab" },
-    ]
-  },
-  {
-    id: 8,
-    name: "Technical",
-    title: "Code & Innovation",
-    icon: Code,
-    description: "Hackathons, coding challenges, and tech innovations by tomorrow's engineers.",
-    events: [
-      { name: "Hackathon", date: "Jan 30-31", venue: "Tech Block" },
-      { name: "Coding Challenge", date: "Jan 31", venue: "Lab A" },
-      { name: "Tech Quiz", date: "Feb 1", venue: "Hall C" },
+      { name: "Photography" },
+      { name: "Short Film" },
+      { name: "Reels" },
+      { name: "Digital Art" },
+      { name: "Trailer Making" },
+      { name: "Book Cover Designing" },
+      { name: "Movie Frame Recreation" },
     ]
   },
 ];
@@ -151,24 +168,16 @@ function EventCard({ category, index }: { category: typeof eventCategories[0]; i
             {category.description}
           </p>
 
-          <div className="space-y-3">
-            <h4 className="font-semibold text-foreground text-sm">Events in this Category:</h4>
-            {category.events.map((event, idx) => (
-              <div key={idx} className="flex items-start gap-3 p-3 rounded-lg bg-background/40 border border-border/30">
-                <Calendar className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                <div className="flex-1 min-w-0">
+          <div className="space-y-2">
+            <h4 className="font-semibold text-foreground text-sm mb-3">Events in this Category:</h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {category.events.map((event, idx) => (
+                <div key={idx} className="flex items-center gap-2 p-2.5 rounded-lg bg-background/40 border border-border/30 hover:border-primary/30 transition-colors">
+                  <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
                   <p className="font-medium text-foreground text-sm">{event.name}</p>
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground mt-1">
-                    <span>{event.date}</span>
-                    <span>•</span>
-                    <div className="flex items-center gap-1">
-                      <MapPin className="w-3 h-3" />
-                      {event.venue}
-                    </div>
-                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </CardContent>
       </Card>
