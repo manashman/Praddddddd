@@ -1,26 +1,33 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import { ChevronDown, Rocket, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
+import { useState } from "react";
 import { CountdownTimer } from "./CountdownTimer";
 import pradharshiniImage from "@assets/prad 2026 title new_1764267906090.png";
 
 export function HeroSection() {
   const [, navigate] = useLocation();
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
 
   const goToEvents = () => {
     navigate("/events");
   };
 
-  const scrollToContact = () => {
-    const element = document.querySelector("#contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  const handleMouseMove = (e: React.MouseEvent) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    
+    mouseX.set(x * 0.05);
+    mouseY.set(y * 0.05);
+    setMousePosition({ x, y });
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden" onMouseMove={handleMouseMove}>
       {/* Floating decorative elements */}
       <motion.div
         className="absolute top-1/4 left-10 w-3 h-3 rounded-full bg-primary/60"
@@ -79,29 +86,44 @@ export function HeroSection() {
 
         {/* Main Title - Logo Image */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          initial={{ opacity: 0, y: 30, scale: 0.9 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="flex justify-center mb-6"
+          style={{ x: mouseX, y: mouseY }}
         >
-          <img 
+          <motion.img 
             src={pradharshiniImage} 
             alt="Pradharshini 2026" 
             className="h-32 md:h-40 lg:h-48 object-contain filter invert"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
           />
         </motion.div>
 
         {/* Tagline */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed"
         >
-          Step into a temporal journey of culture, creativity, and timeless celebration.
-          <br className="hidden md:block" />
-          History awaits your legacy.
-        </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.65 }}
+          >
+            Step into a temporal journey of culture, creativity, and timeless celebration.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.75 }}
+            className="hidden md:block"
+          >
+            History awaits your legacy.
+          </motion.p>
+        </motion.div>
 
         {/* Event Date */}
         <motion.div
@@ -123,23 +145,33 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
         >
-          <Button 
-            size="lg" 
-            className="font-display text-sm tracking-wider px-8"
-            onClick={goToEvents}
-            data-testid="hero-explore-button"
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
           >
-            EXPLORE EVENTS
-          </Button>
-          <Button 
-            size="lg" 
-            variant="outline"
-            className="font-display text-sm tracking-wider px-8 glass border-primary/30 hover:border-primary/50"
-            onClick={() => window.open("https://drive.google.com/file/d/10d520nYkXtySwXjTiLEhFBtOwXx46arC/view?usp=sharing", "_blank")}
-            data-testid="hero-rulebook-button"
+            <Button 
+              size="lg" 
+              className="font-display text-sm tracking-wider px-8 shadow-lg hover:shadow-primary/50"
+              onClick={goToEvents}
+              data-testid="hero-explore-button"
+            >
+              EXPLORE EVENTS
+            </Button>
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
           >
-            RULE BOOK
-          </Button>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="font-display text-sm tracking-wider px-8 glass border-primary/30 hover:border-primary/50"
+              onClick={() => window.open("https://drive.google.com/file/d/10d520nYkXtySwXjTiLEhFBtOwXx46arC/view?usp=sharing", "_blank")}
+              data-testid="hero-rulebook-button"
+            >
+              RULE BOOK
+            </Button>
+          </motion.div>
         </motion.div>
 
         {/* Countdown */}
