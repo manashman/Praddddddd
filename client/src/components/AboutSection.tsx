@@ -4,10 +4,10 @@ import { useRef } from "react";
 import { Users, Trophy, Calendar, Sparkles } from "lucide-react";
 
 const stats = [
-  { icon: Calendar, value: "10+", label: "Years of Legacy" },
-  { icon: Users, value: "5000+", label: "Participants" },
-  { icon: Trophy, value: "50+", label: "Events" },
-  { icon: Sparkles, value: "10L+", label: "Prize Pool" },
+  { icon: Calendar, value: "46+", label: "Years (Since 1978)" },
+  { icon: Users, value: "30,000+", label: "Total Students" },
+  { icon: Trophy, value: "100+", label: "Colleges" },
+  { icon: Sparkles, value: "50+", label: "Event Categories" },
 ];
 
 export function AboutSection() {
@@ -25,26 +25,20 @@ export function AboutSection() {
             transition={{ duration: 0.8 }}
           >
             <span className="text-primary font-display text-sm tracking-widest uppercase mb-4 block">
-              About The Event
+              About Pradharshini
             </span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              <span className="gradient-cosmic-text">A Cosmic Celebration</span>
-              <br />
-              <span className="text-foreground">of Culture & Creativity</span>
+              <span className="gradient-cosmic-text">Where Culture Thrives</span>
             </h2>
             <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed">
               <p>
-                Pradharshini stands as one of the most prestigious cultural festivals in the region, 
-                bringing together thousands of talented students from across the nation to showcase 
-                their artistic prowess.
+                Conducted by Government Kilpauk Medical College (GKMC), Pradharshini is an intercollegiate cultural extravaganza where versatile talents converge to illustrate their flair.
               </p>
               <p>
-                For over a decade, we have been the launchpad for countless dreams, providing a 
-                platform where creativity knows no bounds and cultural expression takes center stage.
+                Ever since its inception in 1978, Pradharshini has spread its roots across Tamil Nadu and the rest of the country at large. After a brief hiatus, Pradharshini, the crown jewel of GKMC, returned and has once again risen like a phoenix to its former glory.
               </p>
               <p>
-                This year, we transcend earthly limits with our cosmic theme, inviting you to 
-                explore the universe of possibilities that await at Pradharshini 25.
+                Pradharshini, an exhibition of cultural arts, is one of South India's biggest cultural festivals and is the biggest event conducted by a South Indian medical college. Spanning music shows, variety and choreo nights, fashion parades, and numerous casual contests, it remains a beacon of artistic excellence.
               </p>
             </div>
 
