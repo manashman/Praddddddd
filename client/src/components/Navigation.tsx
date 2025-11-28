@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocation } from "wouter";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import pradharshiniLogo from "@assets/prad 2026 title new_1764267906090.png";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -55,14 +56,15 @@ export function Navigation() {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <motion.div 
-              className="flex items-center gap-2"
-              whileHover={{ scale: 1.02 }}
+              className="flex items-center"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
             >
-              <Sparkles className="w-6 h-6 md:w-8 md:h-8 text-primary" />
-              <span className="font-display text-lg md:text-xl font-bold gradient-cosmic-text">
-                PRADHARSHINI
-              </span>
-              <span className="font-display text-xs md:text-sm text-muted-foreground">25</span>
+              <img 
+                src={pradharshiniLogo} 
+                alt="Pradharshini 2026" 
+                className="h-12 md:h-16 w-auto object-contain"
+              />
             </motion.div>
 
             {/* Desktop Navigation */}
