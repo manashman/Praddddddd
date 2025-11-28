@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Users, Trophy, Calendar, Sparkles } from "lucide-react";
+import auditoriomImage from "@assets/PHOTO-2025-09-29-19-55-36_1764335641092.jpeg";
 
 const stats = [
   { icon: Calendar, value: "46+", label: "Years (Since 1978)" },
@@ -96,14 +97,19 @@ export function AboutSection() {
                 }}
               />
 
-              {/* Logo text */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <span className="font-display text-4xl md:text-5xl font-bold text-glow gradient-cosmic-text">
-                    P25
-                  </span>
-                </div>
-              </div>
+              {/* Logo Image */}
+              <motion.div 
+                className="absolute inset-8 flex items-center justify-center rounded-lg overflow-hidden border-4 border-primary/60 shadow-2xl"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.8, delay: 0.4, type: "spring", stiffness: 100 }}
+              >
+                <img 
+                  src={auditoriomImage} 
+                  alt="Kilpauk Medical College Auditorium" 
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
 
               {/* Orbiting dots */}
               <motion.div
