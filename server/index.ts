@@ -77,11 +77,11 @@ async function startServer() {
   });
 
     /* -------- STATIC / VITE -------- */
-if (process.env.NODE_ENV !== "production") {
-  const { setupVite } = await import("./vite");
-  await setupVite(httpServer, app);
-}
-
+    if (process.env.NODE_ENV === "production") { 
+      // DEV-ONLY dynamic import (kept out of production build)
+      const viteModule = await import("./vite" as string);
+      await viteModule.setupVite(httpServer, app);
+    }
 
 
   /* -------- LISTEN -------- */
