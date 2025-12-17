@@ -8,20 +8,18 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "resolveJsonModule": true,
-
-    "baseUrl": ".",
-    "paths": {
-      "@shared/*": ["shared/*"]
-    }
+    "resolveJsonModule": true
   },
+
   "include": [
     "server/**/*.ts",
     "shared/**/*.ts"
   ],
+
   "exclude": [
     "node_modules",
     "client",
+    "dist",
     "vite.config.ts",
     "server/vite.ts"
   ]
