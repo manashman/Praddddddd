@@ -62,7 +62,7 @@ export function Navigation() {
               <span className="font-display text-lg md:text-xl font-bold gradient-cosmic-text">
                 PRADHARSHINI
               </span>
-              <span className="font-display text-xs md:text-sm text-muted-foreground">25</span>
+              <span className="font-display text-xs md:text-sm text-muted-foreground">26</span>
             </motion.div>
 
             {/* Desktop Navigation */}

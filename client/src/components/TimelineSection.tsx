@@ -10,7 +10,7 @@ const timelineEvents = [
     title: "Music Day",
     description: "Grand Inaugration with music performances and perlims of all categories",
     icon: Sun,
-    highlights: ["Opening ceremony", "Music performances", "Preliminary rounds", "All categories"],
+    highlights: ["Solo and Duet Singing", "Beatboxing", "Solo Instrumental", "Battle of Bands", "Pro Show"],
   },
   {
     day: "Day 2",
@@ -18,7 +18,7 @@ const timelineEvents = [
     title: "Theatre Arts Day",
     description: "A spectacular day celebrating the performing arts with theatrical performances and competitions.",
     icon: Stars,
-    highlights: ["Theatre performances", "Drama competitions", "Talent showcase", "Performing arts"],
+    highlights: ["Channel Surfing", "Variety", "Adzap", "Shipwreck", "Monoacting"],
   },
   {
     day: "Day 3",

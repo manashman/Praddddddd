@@ -44,7 +44,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    details: ["Naresh R: +91 8939276895", "Mahashwethha Y: +91 7448833936"],
+    details: ["Rajan SA: +91 8939276895", "Sindhuri: +91 7448833936"],
   },
 ];
 

@@ -53,7 +53,7 @@ const eventCategories = [
   },
   {
     id: 3,
-    name: "Theatre",
+    name: "Theatre Arts",
     title: "Theatre Chronicles",
     icon: Drama,
     description: "Theatrical performances and street plays depicting historical narratives and contemporary stories.",

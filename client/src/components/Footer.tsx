@@ -28,8 +28,9 @@ const socialLinks = [
 ];
 
 const contactInfo = [
-  { label: "Naresh R", phone: "8939276895" },
-  { label: "Mahashwethha Y", phone: "7448833936" },
+  { label: "Rajan SA", phone: "8939276895" },
+  { label: "Sindhuri", phone: "7448833936" },
+  { label: "Muthu VS", phone: "9444971235" },
 ];
 
 export function Footer() {
