@@ -10,9 +10,15 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
 
-    
+    "baseUrl": ".",
+    "paths": {
+      "@shared/*": ["shared/*"]
+    }
   },
-  "include": ["server/**/*.ts", "shared/**/*.ts"],
+  "include": [
+    "server/**/*.ts",
+    "shared/**/*.ts"
+  ],
   "exclude": [
     "node_modules",
     "client",
