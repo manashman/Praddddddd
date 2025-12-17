@@ -4,8 +4,9 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development tsx server/index.ts",
-    "build": "tsc -p tsconfig.server.json",
+    "dev": "tsx server/index.ts",
+    "build": "vite build",
+    "build:server": "tsc -p tsconfig.server.json",
     "start": "node dist/server/index.js",
     "check": "tsc",
     "db:push": "drizzle-kit push"
@@ -57,6 +58,7 @@
     "lucide-react": "^0.453.0",
     "memorystore": "^1.6.7",
     "next-themes": "^0.4.6",
+    "package.json": "^2.0.1",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
     "react": "^18.3.1",
