@@ -5,7 +5,7 @@ import {
   type InsertEvent,
   type ContactSubmission,
   type InsertContact
-} from "@shared/schema";
+} from "../shared/schema";
 import { randomUUID } from "crypto";
 
 export interface IStorage {
