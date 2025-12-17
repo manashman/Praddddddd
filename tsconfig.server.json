@@ -10,7 +10,7 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
 
-    "types": ["node", "express"]
+    
   },
   "include": ["server/**/*.ts", "shared/**/*.ts"],
   "exclude": [
