@@ -153,7 +153,7 @@ export class MemStorage implements IStorage {
 
   async createEvent(insertEvent: InsertEvent): Promise<Event> {
     const id = randomUUID();
-    const event: Event = { ...insertEvent, id };
+    const event: Event = { ...insertEvent, id, prizePool: insertEvent.prizePool ?? null };
     this.events.set(id, event);
     return event;
   }
